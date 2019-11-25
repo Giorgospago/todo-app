@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="row">
+         <div class="col-12">
+             <h1>TODOS</h1>
+             <h2>{{ name }}</h2>
+         </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <ul class="list-group">
+                <li 
+                    *ngFor="let task of uncompletedTasks"
+                    class="list-group-item"
+                >
+                    <span class="badge badge-info mr-3">
+                        <i class="fa fa-calendar"></i>
+                        {{ task.dueDate | date:"short" }}
+                    </span>
+
+                    {{ task.title }}
+                    
+                    <button 
+                        class="btn btn-success btn-sm"
+                        (click)="task.completed = true"
+                    >
+                        <i class="fa fa-check"></i>
+                    </button>
+                    <button 
+                        class="btn btn-danger btn-sm"
+                        [swal]="swalOptions"
+                        (confirm)="removeTask(task._id)"
+                    >
+                        <i class="fa fa-remove"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h1>Completed</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+        <ul class="list-group">
+                <li 
+                    *ngFor="let task of completedTasks"
+                    class="list-group-item"
+                >
+                    <span class="badge badge-info mr-3">
+                        <i class="fa fa-calendar"></i>
+                        {{ task.dueDate | date:"short" }}
+                    </span>
+
+                    {{ task.title }}
+                    
+                    <button 
+                        class="btn btn-info btn-sm"
+                        (click)="task.completed = false"
+                    >
+                        <i class="fa fa-arrow-up"></i>
+                    </button>
+                    <button 
+                        class="btn btn-danger btn-sm"
+                        [swal]="swalOptions"
+                        (confirm)="removeTask(task._id)"
+                    >
+                        <i class="fa fa-remove"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
