@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-9">
+            
+            <input (keydown.enter)="addToList()" type="text" [(ngModel)]="task" class="form-control"/>
+            
+        </div>
+        <div class="col-3">
+            <button (click)="addToList()" class="btn btn-primary">
+                Προσθήκη
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+
+            <ul class="list-group mt-3">
+                <li *ngFor="let item of list; let i = index" class="list-group-item">
+                    <button (click)="removeFromList(i)" class="btn btn-danger">
+                        x
+                    </button>
+                    {{ item }}
+                </li>
+            </ul>
+
+            <button class="btn btn-danger" (click)="deleteAll()">
+                DELETE ALL
+            </button>
+
+        </div>
+    </div>
+</div>
+
+
+
+
