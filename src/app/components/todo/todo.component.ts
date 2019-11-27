@@ -11,6 +11,13 @@ export class TodoComponent implements OnInit {
   public firstName: string = "George";
   public lastName: string = "Pagonoudis";
 
+
+  public search: string = "";
+
+  // Modal Form Variables for new Task
+  public taskTitle: string;
+  public taskDueDate: Date;
+
   public numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 1, 9];
 
   public swalOptions = {
@@ -84,5 +91,17 @@ export class TodoComponent implements OnInit {
     task.completed = true;
   }
   */
+
+  public addTask() {
+    let task = {
+      // _id: (this.todos.length + 1).toString(),
+      _id: this.todos.length + 1 + "",
+      title: this.taskTitle,
+      dueDate: this.taskDueDate,
+      completed: false
+    };
+
+    this.todos.push(task);
+  }
 
 }
