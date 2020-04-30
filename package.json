@@ -24,7 +24,7 @@
     "@sweetalert2/ngx-sweetalert2": "^7.0.1",
     "bootstrap": "^4.0.0",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ngx-filter-pipe": "^2.1.2",
     "rxjs": "~6.4.0",
     "sweetalert2": "^9.4.0",
